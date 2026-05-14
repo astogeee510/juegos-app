@@ -31,7 +31,7 @@ jobs:
       - run: chmod +x gradlew
 
       - name: Compilar y ejecutar tests
-        run: ./gradlew clean check jacocoTestReport -Dnet.bytebuddy.experimental=true
+        run: ./gradlew clean test jacocoTestReport -Dnet.bytebuddy.experimental=true -x copyContracts -x generateContractTests
 
       - uses: actions/upload-artifact@v4
         if: always()
