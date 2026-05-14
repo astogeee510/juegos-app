@@ -1,0 +1,30 @@
+# Build output
+build/
+out/
+
+# Gradle cache (NO excluir gradle/wrapper/)
+.gradle/
+
+# IDE
+.idea/
+*.iml
+*.ipr
+*.iws
+.classpath
+.project
+.settings/
+*.swp
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Environment / secrets
+.env
+*.env
+
+# Docker volumes
+docker-data/

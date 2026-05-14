@@ -1,0 +1,22 @@
+services:
+
+  juegos-app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: juegos-app:latest
+    container_name: juegos-app
+    environment:
+      SPRING_PROFILES_ACTIVE:     dev
+      SPRING_DATASOURCE_URL:      jdbc:postgresql://juegos-datos:5432/juegos
+      SPRING_DATASOURCE_USERNAME: juegos_user
+      SPRING_DATASOURCE_PASSWORD: juegos_pass
+    ports:
+      - "8080:8080"
+    restart: unless-stopped
+    networks:
+      - juegos-network
+
+networks:
+  juegos-network:
+    external: true
